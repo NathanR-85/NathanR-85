@@ -78,7 +78,8 @@ function public_stats_clear_pages()
         if (function_exists('rocket_clean_post')) {
             rocket_clean_post($id); // WP Rocket; its Cloudflare add-on purges the same URL.
         }
-        do_action('cache_enabler_clear_page_cache_by_post', $id); // Cache Enabler.
+        do_action('cache_enabler_clear_page_cache_by_post', $id); // Cache Enabler 1.8+.
+        do_action('cache_enabler_clear_page_cache_by_post_id', $id); // Older Cache Enabler (Nexcess bundles 1.7).
     }
 }
 
